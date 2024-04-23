@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,19 +6,24 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>data</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href="{% static 'styles/data1.css' %}">
     <script src='main.js'></script>
 </head>
 <body>
-    <form action="/enter" method ="POST">
+    <form action="/enter" method="POST">
         {% csrf_token %}
-        <label>name :</label>
-        <input type="text" name="name"><br>
-        <label>mark :</label>
-        <input type="text" name="mark"><br>
-        <label>college :</label>
-        <input type="text" name="college"><br>
-        <input type="Submit" value="submit">
+        <label>Name:</label>
+        <input type="text" name="name" maxlength="300" required><br>
+    
+        <label>Course:</label>
+        <select name="courses">
+            <option value="fullstack">FullStack</option>
+            <option value="devops">DevOps</option>
+            <option value="ai&ml">AI & ML</option>
+        </select><br><br><br>
+    
+        <input type="submit" value="Submit">
     </form>
+    
 </body>
 </html>

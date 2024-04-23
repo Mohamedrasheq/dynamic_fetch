@@ -1,20 +1,51 @@
+{% load static %}
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Home page</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <script src='main.js'></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Home Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="{% static 'styles/main.css' %}">
+    <script src="main.js"></script>
 </head>
 <body>
-    {% for item in data %}
-    <h1>id : {{item.id}}</h1>
-    <h1>name : {{item.name}}</h1>
-    <h1>mark : {{item.mark}}</h1>
-    <h1>college : {{item.college}}</h1>
-    <br><br>
-    {% endfor %}
+    <h1>Student Details</h1>
+    <div class="container">
+        <div class="table-group">
+            <!-- First table -->
+            {% for item in data %}
+            <div class="table-pair">
+            <table class="styled-table">
+                <tr>
+                    <td><strong>ID:</strong></td>
+                    <td>{{item.id}}</td>
+                </tr>
+                <tr>
+                    <td><strong>Name:</strong></td>
+                    <td>{{item.name}}</td>
+                </tr>
+                <tr>
+                    <td><strong>Mark:</strong></td>
+                    <td >{{item.courses}}</td>
+                </tr>
+            </table>
+            
+            <!-- Second table -->
+            <table class="styled-table">
+                <tr>
+                    <td><strong>Additional Info:</strong></td>
+                    <td>Some additional data</td>
+                </tr>
+                <tr>
+                    <td><strong>Extra Field:</strong></td>
+                    <td>Some extra data</td>
+                </tr>
+                <!-- Add more rows as needed -->
+            </table>
+        </div>
+            {% endfor %}
+        </div>
+    </div>
 </body>
 </html>

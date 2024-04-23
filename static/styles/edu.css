@@ -1,0 +1,83 @@
+/* Main CSS */
+body {
+    font-family: 'Arial', sans-serif; /* Basic font */
+    background-color: #f5f5f5; /* Light background */
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333; /* Dark background for header */
+    color: #fff; /* White text */
+    padding: 20px; /* Padding for spacing */
+    text-align: center; /* Centered header content */
+}
+
+header nav {
+    margin-top: 10px; /* Space above the navigation */
+}
+
+header nav ul {
+    list-style-type: none; /* No bullet points */
+    padding: 0; /* No extra padding */
+}
+
+header nav ul li {
+    display: inline; /* Inline list items */
+    margin-right: 20px; /* Space between navigation items */
+}
+
+header nav ul li a {
+    color: white; /* White links */
+    text-decoration: none; /* No underlines */
+    font-weight: bold; /* Bold text */
+}
+
+header nav ul li a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+section {
+    padding: 20px; /* Padding for spacing */
+    margin: 20px auto; /* Center sections */
+    background-color: #fff; /* White background for sections */
+    max-width: 800px; /* Limit width for readability */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+h1, h2 {
+    color: #333; /* Dark text for headers */
+}
+
+table {
+    border-collapse: collapse; /* No space between cells */
+    width: 100%; /* Full-width table */
+}
+
+table th, table td {
+    padding: 10px; /* Padding for table cells */
+    border: 1px solid #ddd; /* Light border */
+    text-align: left; /* Left-align text */
+}
+
+footer {
+    background-color: #333; /* Dark background for footer */
+    color: white; /* White text */
+    padding: 20px; /* Padding for spacing */
+    text-align: center; /* Centered footer content */
+}
+
+@media (max-width: 600px) {
+    header nav ul {
+        text-align: center; /* Center navigation on smaller screens */
+    }
+
+    section {
+        padding: 15px; /* Adjusted padding for smaller screens */
+    }
+
+    table th, table td {
+        padding: 8px; /* Adjusted padding for smaller screens */
+    }
+}

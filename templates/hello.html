@@ -1,14 +1,83 @@
+{% load static %}
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>sample</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <script src='main.js'></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Education Center Student Portal</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'styles/edu.css' %}"> <!-- Link to CSS file -->
+    <script src="scripts/main.js"></script> <!-- Link to JS file -->
 </head>
 <body>
-    <h1>hello</h1>
+    <header>
+        <h1>Education Center Student Portal</h1> <!-- Portal title -->
+        <nav>
+            <ul>
+                <li><a href="#student-info">Student Info</a></li>
+                <li><a href="#courses">Courses</a></li>
+                <li><a href="#schedule">Schedule</a></li>
+                <li><a href="#announcements">Announcements</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="student-info">
+        <h2>Student Information</h2>
+        <p>Welcome, <span style="color:crimson">{{data.name}} ! </span> Here you can find your personal information, grades, and other relevant details.</p>
+    </section>
+
+    <section id="courses">
+        <h2>Courses Selected</h2>
+        <ul>
+            <li>Course :{{data.courses}}</li>
+            <!-- Add more courses as needed -->
+        </ul>
+    </section>
+
+    <section id="schedule">
+        <h2>Schedule</h2>
+        <p>Check your class schedule for the current term.</p>
+        <!-- Example schedule table -->
+        <table>
+            <tr>
+                <th>Day</th>
+                <th>Time</th>
+                <th>Class</th>
+            </tr>
+           {% for item in slot %}
+            <tr>
+                <td>{{item.0}}</td>
+                <td>
+                    {{item.1}}
+                </td>
+                <td>{{item.2}}</td>
+            </tr>
+            {% endfor %}
+            <!-- Add more schedule rows as needed -->
+        </table>
+    </section>
+
+    <section id="announcements">
+        <h2>Announcements</h2>
+        <p>Latest news and updates from the education center.</p>
+        <!-- Example announcements -->
+        <ul>
+            <li>Announcement 1: Details about the announcement.</li>
+            <li>Announcement 2: Details about the announcement.</li>
+        </ul>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>If you have any questions or need assistance, please contact us at:</p>
+        <p>Email: rasheq53@gmail.com</p>
+        <p>Phone: 8902325887</p>
+    </section>
+
+    <footer>
+        <p>Created by Team Orca <span style="font-size: 30px; color: red; padding-top:50px;">&#9829</span></p> <!-- Footer information -->
+    </footer>
 </body>
 </html>
